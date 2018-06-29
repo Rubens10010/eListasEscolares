@@ -12,6 +12,7 @@ suppliers = [{"name":"Tay loy","urlCall":"/supplier?name=tayloy"},{"name":"Criso
 
 @app.route('/')
 def home():
+	loggedUser = False
 	return render_template('index.html',Suppliers=suppliers)
 
 @app.route('/supplier',methods=['GET'])
@@ -23,14 +24,17 @@ def supplier():
 		supplier_name = 'Tay Loy'
 		supplier_imgPath = '/static/Images/t5.png'
 		supplier_products = [{"name":"Archivador","urlCall":"/static/Images/27.jpg"},{"name":"Crayones","urlCall":"/static/Images/28.jpg"},{"name":"Papel a4","urlCall":"/static/Images/30.jpg"},{"name":"Laptop","urlCall":"/static/Images/25.jpg"}]
-	return render_template('supplier.html', Supplier_name = supplier_name, Supplier_imgPath = supplier_imgPath, Products = supplier_products)
+	if loggedUser:
+		return render_template('supplierLogged.html', Email = user_email, Supplier_name = supplier_name, Supplier_imgPath = supplier_imgPath, Products = supplier_products, Suppliers = suppliers)
+	
+	return render_template('supplier.html', Supplier_name = supplier_name, Supplier_imgPath = supplier_imgPath, Products = supplier_products, Suppliers = suppliers)
 
 @app.route('/about')
 def about():
 	if loggedUser:
-		return render_template("aboutLogged.html", Email=user_email, Password = user_pass)
+		return render_template("aboutLogged.html", Email=user_email, Password = user_pass, Suppliers = suppliers)
 	else:
-		return render_template('about.html')
+		return render_template('about.html', Suppliers = suppliers)
 
 @app.route('/logUser', methods=['POST','GET'])
 def logUser():
@@ -49,11 +53,11 @@ def logUser():
 			uid = '-1'
 		finally:
 			#con.close()
-			return render_template("user.html", Email=email, Password = password)
+			return render_template("user.html", Email=email, Password = password, Suppliers = suppliers)
 
 @app.route('/user')
 def user():
-	return render_template("user.html", Email=user_email, Password = user_pass)
+	return render_template("user.html", Email=user_email, Password = user_pass, Suppliers = suppliers)
 
 @app.route('/registerUser', methods=['POST','GET'])
 def registerUser():
@@ -74,7 +78,7 @@ def registerUser():
 			uid = '-1'
 		finally:
 			#con.close()
-			return render_template("user.html", Email=email, Password = password)
+			return render_template("user.html", Email=user_email, Password = user_pass, Suppliers = suppliers)
 
 @app.route('/icons')
 def icons():
@@ -83,6 +87,12 @@ def icons():
 @app.route('/codes')
 def codes():
     return render_template('codes.html')
+
+@app.route('/mail')
+def mail():
+	if loggedUser:
+		return render_template('mailLogged.html', Email =user_email, Password = user_pass, Suppliers = suppliers)	
+	return render_template('mail.html', Suppliers = suppliers)
 
 if __name__ == '__main__':
     app.run(debug = True)
