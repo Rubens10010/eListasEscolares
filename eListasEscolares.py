@@ -20,7 +20,10 @@ def supplier():
 	supplier_name = request.args.get('name')
 	supplier_imgPath = '/static/Images/noSupplier.png'
 	supplier_products = [{"name":"nothing","urlCall":"noProduct.png"}]
+	print supplier_name
+	
 	if supplier_name is 'tayloy':
+		print "ARRIVED HERE"
 		supplier_name = 'Tay Loy'
 		supplier_imgPath = '/static/Images/t5.png'
 		supplier_products = [{"name":"Archivador","urlCall":"/static/Images/27.jpg"},{"name":"Crayones","urlCall":"/static/Images/28.jpg"},{"name":"Papel a4","urlCall":"/static/Images/30.jpg"},{"name":"Laptop","urlCall":"/static/Images/25.jpg"}]
@@ -93,6 +96,45 @@ def mail():
 	if loggedUser:
 		return render_template('mailLogged.html', Email =user_email, Password = user_pass, Suppliers = suppliers)	
 	return render_template('mail.html', Suppliers = suppliers)
+
+@app.route('/schools')
+def schools():
+	if loggedUser:
+		return render_template('schoolsLogged.html', Email =user_email, Password = user_pass, Suppliers = suppliers)	
+	return render_template('schools.html', Suppliers = suppliers)
+
+@app.route('/schoolLists',methods=['GET'])
+def schoolLists():
+	school_name = request.args.get('name')
+	supplier_imgPath = '/static/Images/noSupplier.png'
+	supplier_products = [{"name":"nothing","urlCall":"noProduct.png"}]
+	
+	if loggedUser:
+		return render_template('schoolListsLogged.html', Email = user_email, School_name = school_name, Suppliers = suppliers)
+	return render_template('schoolLists.html', School_name = school_name, Suppliers = suppliers)
+
+
+@app.route('/kindergarden')
+def kindergarden():
+	if loggedUser:
+		return render_template('kindergardenLogged.html', Email =user_email, Password = user_pass, Suppliers = suppliers)	
+	return render_template('kindergarden.html', Suppliers = suppliers)
+
+@app.route('/kinderLists',methods=['GET'])
+def kinderLists():
+	kinder_name = request.args.get('name')
+	supplier_imgPath = '/static/Images/noSupplier.png'
+	supplier_products = [{"name":"nothing","urlCall":"noProduct.png"}]
+	
+	if loggedUser:
+		return render_template('kindergardenListsLogged.html', Email = user_email, Kinder_name = kinder_name, Suppliers = suppliers)
+	return render_template('kindergardenLists.html', Kinder_name = kinder_name, Suppliers = suppliers)
+
+@app.route('/others')
+def others():
+	if loggedUser:
+		return render_template('othersLogged.html', Email =user_email, Password = user_pass, Suppliers = suppliers)	
+	return render_template('others.html', Suppliers = suppliers)
 
 if __name__ == '__main__':
     app.run(debug = True)

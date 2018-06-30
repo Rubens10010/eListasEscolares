@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+
+{% block w3l_login %}
+<div class="w3l_login">
+	<a href="#" data-toggle="modal" data-target="#myModal88">
+	<span class="glyphicon glyphicon-user" aria-hidden="true">
+	</span></a>
+</div>
+{% endblock %}
+
+{% block header_modal %}
+<!-- null -->
+{% endblock %}
+
+{% block indexClass %}
+<a href="/"> Inicio</a>
+{% endblock %}
+
+{% block productsClass %}
+<a href="#" class="act" data-toggle="dropdown">Productos <b class="caret"></b></a>
+{% endblock %}
+
+{% block aboutClass %}
+	<a href="/about" class = "dropdown-toggle">Acerca de Nosotros</a>
+{% endblock %}
+
+{% block supplierClass %}
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proveedores<span class="caret"></span></a>
+{% endblock %}
+
+{% block contactClass %}
+<a href="/mail">Contactanos</a>
+{% endblock %}
+
+
+{% block content %}
+	<!-- banner -->
+	<div class="banner supplierBanner banner10">
+		<div class="container">
+			<h2>Otros productos</h2>
+		</div>
+	</div>
+	<!-- //banner -->   
+	<!-- breadcrumbs -->
+	<div class="breadcrumb_dress">
+		<div class="container">
+			<ul>
+				<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a> <i>/</i></li>
+				<li>Otros productos</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //breadcrumbs --> 
+
+	<!-- team -->
+	<div class="team">
+		<div class="container">
+			<h3>Productos seleccionados</h3>
+			<div class="wthree_team_grids">
+				<div class="col-md-3 wthree_team_grid">
+					<div class = "schoolImgLink">
+					<a href="/schoolLists?name=Independencia">
+					<img src="/static/images/IndependenciaAmericana.jpg" alt=" " class="img-responsive" />
+					</a>
+				</div>
+					<h4>Independencia Americana<span>Nacional</span></h4>
+
+					<div class="labels_list">
+					<h6>
+						<span class="label label-primary">Secundaria</span>
+						<span class="label label-danger">Varones</span>
+					</h6>
+					</div>
+
+					<div class="agileits_social_button">
+						<ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="twitter"> </a></li>
+							<li><a href="#" class="google"> </a></li>
+							<li><a href="#" class="pinterest"> </a></li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="col-md-3 wthree_team_grid">
+					<div class = "schoolImgLink">
+					<a href="/schoolLists?name=Gue">
+					<img src="/static/images/Gue.jpeg" alt=" " class="img-responsive" />
+					</a>
+					</div>
+					<h4>Gran Unidad Escolar<span>Nacional</span></h4>
+
+					<div class="labels_list">
+					<h6>
+						<span class="label label-default">Inicial</span>
+						<span class="label label-info">Primaria</span>
+						<span class="label label-primary">Secundaria</span>
+						<span class="label label-success">Mixto</span>
+					</h6>
+					</div>
+
+					<div class="agileits_social_button">
+						<ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="twitter"> </a></li>
+							<li><a href="#" class="google"> </a></li>
+							<li><a href="#" class="pinterest"> </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 wthree_team_grid">
+				<div class = "schoolImgLink">
+				<a href="/schoolLists?name=Micaela">
+					<img src="/static/images/Micaelabanner.jpg" alt=" " class="img-responsive" />
+				</a>
+				</div>
+					<h4>Micaela Bastidas<span>Nacional</span></h4>
+
+					<div class="labels_list">
+					<h6>
+						<span class="label label-info">Primaria</span>
+						<span class="label label-primary">Secundaria</span>
+						<span class="label label-success">Damas</span>
+					</h6>
+					</div>
+
+					<div class="agileits_social_button">
+						<ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="twitter"> </a></li>
+							<li><a href="#" class="google"> </a></li>
+							<li><a href="#" class="pinterest"> </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 wthree_team_grid">
+				<div class = "schoolImgLink">
+				<a href="/schoolLists?name=Salle">
+					<img src="/static/images/Sallebanner.jpg" alt=" " class="img-responsive" />
+				</a>
+				</div>
+					<h4>San Juan Bautista<span>Privado</span></h4>
+
+					<div class="labels_list">
+					<h6>
+						<span class="label label-default">Inicial</span>
+						<span class="label label-info">Primaria</span>
+						<span class="label label-primary">Secundaria</span>
+						<span class="label label-success">Varones</span>
+					</h6>
+					</div>
+
+					<div class="agileits_social_button">
+						<ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="twitter"> </a></li>
+							<li><a href="#" class="google"> </a></li>
+							<li><a href="#" class="pinterest"> </a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="clearfix"> </div>
+				<p>Nuestros socios estrategicos brindan sus productos mediante esta plataforma al publico general
+					Cada socio es responsable de los estandares de calidad de sus 
+					productos.</p>
+			</div>
+
+					<!-- Navigation -->
+					<div class="navigationSchools">
+					<nav>
+						<ul class="pagination">
+							<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+							<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+						</ul>
+					</nav>
+					</div>
+		</div>
+	</div>
+	<!-- //team -->
+{% endblock %}

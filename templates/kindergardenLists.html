@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block w3l_login %}
+<div class="w3l_login">
+	<a href="#" data-toggle="modal" data-target="#myModal88">
+	<span class="glyphicon glyphicon-user" aria-hidden="true">
+	</span></a>
+</div>
+{% endblock %}
+
+{% block header_modal %}
+<!-- null -->
+{% endblock %}
+
+{% block indexClass %}
+<a href="/"> Inicio</a>
+{% endblock %}
+
+{% block productsClass %}
+<a href="#" class="act" data-toggle="dropdown">Productos <b class="caret"></b></a>
+{% endblock %}
+
+{% block aboutClass %}
+	<a href="/about" class = "dropdown-toggle">Acerca de Nosotros</a>
+{% endblock %}
+
+{% block supplierClass %}
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proveedores<span class="caret"></span></a>
+{% endblock %}
+
+{% block contactClass %}
+<a href="/mail">Contactanos</a>
+{% endblock %}
+
+
+{% block content %}
+	<style>
+	.banner.supplierBanner {
+		background:url(/static/images/jardin{{ Kinder_name }}banner.jpg) 0px;
+	}
+	</style>
+
+	<!-- banner -->
+	<div class="banner supplierBanner banner10">
+		<div class="container">
+			<h2>Jardin {{ Kinder_name }}</h2>
+		</div>
+	</div>
+	<!-- //banner -->   
+	<!-- breadcrumbs -->
+	<div class="breadcrumb_dress">
+		<div class="container">
+			<ul>
+				<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a> <i>/</i></li>
+				<li>Productos</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //breadcrumbs --> 
+{% endblock %}

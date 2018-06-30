@@ -1,46 +1,158 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>eListasEscolares un lugar todos tus utiles | Acerca</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Electronic Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+	function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!-- Custom Theme files -->
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" /> 
+<!-- //Custom Theme files -->
+<!-- font-awesome icons -->
+<link href="/static/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="/static/js/jquery.min.js"></script> 
+<!-- //js -->  
+<!-- web fonts --> 
+<link href='//fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- //web fonts --> 
+<!-- for bootstrap working -->
+<script type="text/javascript" src="/static/js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+<!-- start-smooth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
 
-{% extends "layout.html" %}
+<style>
+.banner.supplierBanner {
+	background:url(/static/images/{{ Supplier_name }}banner.png) 0px;
+}
+</style>
 
-{% block w3l_login %}
-<div class="w3l_login">
-	<a href="#" data-toggle="modal" data-target="#myModal88">
-	<span class="glyphicon glyphicon-user" aria-hidden="true">
-	</span></a>
-</div>
-{% endblock %}
-
-{% block header_modal %}
-<!-- null -->
-{% endblock %}
-
-{% block indexClass %}
-<a href="/"> Inicio</a>
-{% endblock %}
-
-{% block productsClass %}
-<a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
-{% endblock %}
-
-{% block aboutClass %}
-	<a href="/about" class = "dropdown-toggle">Acerca de Nosotros</a>
-{% endblock %}
-
-{% block supplierClass %}
-<a href="#" class="act" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proveedores<span class="caret"></span></a>
-{% endblock %}
-
-{% block contactClass %}
-<a href="/mail">Contactanos</a>
-{% endblock %}
-
-
-{% block content %}
-	<style>
-	.banner.supplierBanner {
-		background:url(/static/images/{{ Supplier_name }}banner.png) 0px;
-	}
-	</style>
-
+<!-- //end-smooth-scrolling --> 
+</head> 
+<body> 
+	<!-- header -->
+	<div class="header" id="home1">
+		<div class="container">
+			<div class="w3l_login">
+				<a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+			</div>
+			<div class="w3l_logo">
+				<h1><a href="/index.html">eLibreria Escolar<span>Tus Librerias En Un Solo Lugar.</span></a></h1>
+			</div>
+			<div class="search">
+				<input class="search_box" type="checkbox" id="search_box">
+				<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
+				<div class="search_form">
+					<form action="#" method="post">
+						<input type="text" name="Search" placeholder="Search...">
+						<input type="submit" value="Send">
+					</form>
+				</div>
+			</div>
+			<div class="cart cart box_1"> 
+				<form action="#" method="post" class="last"> 
+					<input type="hidden" name="cmd" value="_cart" />
+					<input type="hidden" name="display" value="1" />
+					<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+				</form>   
+			</div>  
+		</div>
+	</div>
+	<!-- //header -->
+	<!-- navigation -->
+	<div class="navigation">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header nav_2">
+					<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div> 
+				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+					<ul class="nav navbar-nav">
+						<li><a href="/">Inicio</a></li>	
+						<!-- Mega Menu -->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
+							<ul class="dropdown-menu multi-column columns-3">
+								<div class="row">
+									<div class="col-sm-3">
+										<ul class="multi-column-dropdown">
+											<h6>Mobiles</h6>
+											<li><a href="products.html">Mobile Phones</a></li>
+											<li><a href="products.html">Mp3 Players <span>New</span></a></li> 
+											<li><a href="products.html">Popular Models</a></li>
+											<li><a href="products.html">All Tablets<span>New</span></a></li>
+										</ul>
+									</div>
+									<div class="col-sm-3">
+										<ul class="multi-column-dropdown">
+											<h6>Accessories</h6>
+											<li><a href="products1.html">Laptop</a></li>
+											<li><a href="products1.html">Desktop</a></li>
+											<li><a href="products1.html">Wearables <span>New</span></a></li>
+											<li><a href="products1.html"><i>Summer Store</i></a></li>
+										</ul>
+									</div>
+									<div class="col-sm-2">
+										<ul class="multi-column-dropdown">
+											<h6>Home</h6>
+											<li><a href="products2.html">Tv</a></li>
+											<li><a href="products2.html">Camera</a></li>
+											<li><a href="products2.html">AC</a></li>
+											<li><a href="products2.html">Grinders</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-4">
+										<div class="w3ls_products_pos">
+											<h4>30%<i>Off/-</i></h4>
+											<img src="/static/images/1.jpg" alt=" " class="img-responsive" />
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</ul>
+						</li>
+						<li><a href="about.html" class="act">Acerca de Nosotros</a></li> 
+						<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proveedores <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="icons.html">Distribuidora el saber</a></li>
+								<li><a href="codes.html">Tay Loy</a></li>     
+							</ul>
+						</li>  
+						<li><a href="mail.html">Contactanos</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- //navigation -->
 	<!-- banner -->
 	<div class="banner supplierBanner banner10">
 		<div class="container">
@@ -48,18 +160,6 @@
 		</div>
 	</div>
 	<!-- //banner -->   
-
-	<!-- breadcrumbs -->
-	<div class="breadcrumb_dress">
-		<div class="container">
-			<ul>
-				<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a> <i>/</i></li>
-				<li>Proveedores</li>
-			</ul>
-		</div>
-	</div>
-	<!-- //breadcrumbs --> 
-
 <div class="banner-bottom">
 		<div class="container">
 			<div class="col-md-5 wthree_banner_bottom_left">
@@ -582,7 +682,6 @@
 											<input type="hidden" name="w3ls_item" value="Grinder" /> 
 											<input type="hidden" name="amount" value="450.00" />   
 											<button type="submit" class="w3ls-cart">Add to cart</button>
-
 										</form>
 									</div>-->
 								</div>
@@ -592,7 +691,6 @@
 										<!--<img src="/static/images/17.jpg" alt=" " class="img-responsive" />
 										<img src="/static/images/19.jpg" alt=" " class="img-responsive" />
 										<img src="/static/images/17.jpg" alt=" " class="img-responsive" />
-
 										<img src="/static/images/18.jpg" alt=" " class="img-responsive" />
 										<img src="/static/images/19.jpg" alt=" " class="img-responsive" />
 										<img src="/static/images/17.jpg" alt=" " class="img-responsive" />
@@ -610,7 +708,6 @@
 										<p><span>$390</span> <i class="item_price">$350</i></p>
 										<form action="#" method="post">
 											<input type="hidden" name="cmd" value="_cart" />
-
 											<input type="hidden" name="add" value="1" /> 
 											<input type="hidden" name="w3ls_item" value="Water Purifier" /> 
 											<input type="hidden" name="amount" value="350.00" />   
@@ -622,7 +719,6 @@
 									<div class="hs-wrapper">
 										<img src="/static/images/19.jpg" alt=" " class="img-responsive" />
 										<!--<img src="/static/images/17.jpg" alt=" " class="img-responsive" />
-
 										<img src="/static/images/18.jpg" alt=" " class="img-responsive" />
 										<img src="/static/images/17.jpg" alt=" " class="img-responsive" />
 										<img src="/static/images/18.jpg" alt=" " class="img-responsive" />
@@ -719,4 +815,87 @@
 		</div>
 	</div>
 
-{% endblock %}
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="w3_footer_grids">
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Contacto</h3>
+					<p>Contactanos si quieres trabajar con nosotros.</p>
+					<ul class="address">
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234 Avenida, 4to bloque, <span>Arequipa.</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@unsa.edu.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Informacion</h3>
+					<ul class="info"> 
+						<li><a href="/about">Acerca</a></li>
+						<li><a href="mail.html">Contactanos</a></li>
+						<li><a href="codes.html">Codigos</a></li>
+						<li><a href="faq.html">FAQ's</a></li>
+						<li><a href="products.html">Productos especiales</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Categorias</h3>
+					<ul class="info"> 
+						<li><a href="products.html">Utiles escolares</a></li>
+						<li><a href="products1.html">Utiles de oficina</a></li>
+						<li><a href="products.html">Jueguetes</a></li>
+						<li><a href="products1.html">Electronica</a></li>
+						<li><a href="products2.html">Uniformes</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Perfil</h3>
+					<ul class="info"> 
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="products.html">Gangas del dia</a></li>
+					</ul>
+					<h4>Siguenos</h4>
+					<div class="agileits_social_button">
+						<ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="twitter"> </a></li>
+							<li><a href="#" class="google"> </a></li>
+							<li><a href="#" class="pinterest"> </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="footer-copy">
+			<div class="footer-copy1">
+				<div class="footer-copy-pos">
+					<a href="#home1" class="scroll"><img src="/static/images/arrow.png" alt=" " class="img-responsive" /></a>
+				</div>
+			</div>
+			<div class="container">
+				<p>&copy; 2017 Tienda Electronica. All rights reserved | Design by edwrubens@gmail.com</a></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- //footer --> 
+	<!-- cart-js -->
+	<script src="/static/js/minicart.js"></script>
+	<script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+        	var items, len, i;
+
+        	if (this.subtotal() > 0) {
+        		items = this.items();
+
+        		for (i = 0, len = items.length; i < len; i++) { 
+        		}
+        	}
+        });
+    </script>  
+	<!-- //cart-js --> 
+</body>
+</html>
