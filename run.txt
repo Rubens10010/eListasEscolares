@@ -1,2 +1,1 @@
-python createAppDB.py
-python eListasEscolares.py
+python name.py
