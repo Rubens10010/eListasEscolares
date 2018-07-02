@@ -136,5 +136,15 @@ def others():
 		return render_template('othersLogged.html', Email =user_email, Password = user_pass, Suppliers = suppliers)	
 	return render_template('others.html', Suppliers = suppliers)
 
+@app.route('/orderLists',methods=['GET'])
+def orderLists():
+	school_name = request.args.get('name')
+	supplier_imgPath = '/static/Images/noSupplier.png'
+	supplier_products = [{"name":"nothing","urlCall":"noProduct.png"}]
+	
+	if loggedUser:
+		return render_template('orderListsLogged.html', Email = user_email, School_name = school_name, Suppliers = suppliers)
+	return render_template('orderLists.html', School_name = school_name, Suppliers = suppliers)
+
 if __name__ == '__main__':
     app.run(debug = True)
