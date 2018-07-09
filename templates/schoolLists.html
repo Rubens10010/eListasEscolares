@@ -38,6 +38,53 @@
 	.banner.supplierBanner {
 		background:url(/static/images/{{ School_name }}banner.jpg) 0px;
 	}
+
+.newsletter {
+    background: #3c43a4;
+    padding: 3em 0;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ContainerLists {
+	clear: none;
+	position: relative;
+	margin-left: 80px;
+}
+
+.gallery-container{
+	margin-left:100px;
+	position: relative;
+	display: inline-block;
+}
+
+.listPoster
+{
+	position: relative;
+	display: inherit;
+	margin-bottom: 20px;	
+}
+
+.photo.isotope-item {
+	position: relative;
+	display: block;
+}
+
+.listPoster:hover
+{	
+	color: #4F9C45;
+	opacity: 0.3;
+}
+
+.teacherName {
+	position: inherit;
+	display: block;
+	text-align: center;
+	margin-top: 8px;
+}
+
 	</style>
 
 	<!-- banner -->
@@ -57,4 +104,205 @@
 		</div>
 	</div>
 	<!-- //breadcrumbs --> 
+
+<div class="section_header">
+  <h3>Listas</h3>
+</div>
+
+<!-- content Container -->
+<div class = "ContainerLists">
+<!-- School Lists Menu -->
+<div class="vmenu-schoolLists" style="float: left;">
+<ul id="menu-v">
+    <li><a href="#">1er Grado</a>
+        <ul class="sub">
+            <li><a href="#">1ro A</a></li>
+            <li><a href="#">1ro B</a></li>
+            <li><a href="#">1ro C</a></li>
+        </ul>
+	</li>
+    <li><a href="#">2do Grado</a>
+        <ul class="sub">
+            <li><a href="vertical-menu#1">2do A</a></li>
+            <li><a href="vertical-menu#2">2do B</a></li>
+        </ul>
+    </li>
+    <li><a href="#">3er Grado</a>
+    </li>
+    <li><a href="#">4to Grado</a></li>
+    <li><a href="#">5to Grado</a>
+        <ul class="sub">
+            <li><a href="#">Sub Item 5.1</a></li>
+            <li><a href="#">Sub Item 5.2</a>
+                <ul class="sub">
+                    <li><a href="#521">Vertical Menu 5.2.1</a></li>
+                    <li><a href="#522">Vertical Menu 5.2.2</a></li>
+                    <li><a href="#523">Vertical Menu 5.2.3</a></li>
+                    <li><a href="#524">Vertical Menu 5.2.4</a></li>
+                    <li><a href="#525">Vertical Menu 5.2.5</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sub Item 5.3</a>
+                <ul class="sub">
+                    <li><a href="#">Sub Item 5.3.1</a></li>
+                    <li><a href="#">Sub Item 5.3.2</a></li>
+                    <li><a href="#">Sub Item 5.3.3</a></li>
+                    <li><a href="#">Sub Item 5.3.4</a></li>
+                    <li><a href="#">Sub Item 5.3.5</a></li>
+                    <li><a href="#">Sub Item 5.3.6</a></li>
+                    <li><a href="#537">Vertical Menus 5.3.7</a></li>
+                    <li><a href="#538">Vertical Menus 5.3.8</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">6to Grado</a></li>
+</ul>
+
+</div>
+<!--// end school menu lists -->
+
+<!-- Lists container -->
+<div class = "listsContainer" style="float: left;">
+<div class="row">
+  <div class="col-md-12">
+    <div class="gallery-container isotope" style="position: relative; overflow: hidden; height: 1236px;">
+
+
+	<div class="listPoster" >
+	<a href="/orderLists?name={{ School_name }}">
+        <div class="photo isotope-item" style="position: relative; left: 0px; top: 0px; display: block;">
+          <img class="img-responsive" alt="School List" src="/static/images/schoolLists/schoolList1.jpg">
+        </div>
+
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</a>
+		</div>
+
+	<div class="listPoster">
+	<a href="/orderLists?name={{ School_name }}">
+        <div class="photo isotope-item" style="left: 0px; top: 0px; display: block;">
+          <img class="img-responsive" alt="Tallinn University of Technology, Template of doctoral thesis" src="/static/images/schoolLists/schoolList2.jpg">
+       </div>
+
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</a>
+		</div>
+
+	<div class="listPoster">
+	<a href="/orderLists?name={{ School_name }}">
+        <div class="photo isotope-item" style="left: 0px; top: 0px; display: block;">
+          <img class="img-responsive" alt=" Ciudades y Territorios Virtuales 2018" src="/static/images/schoolLists/schoolList3.jpg">
+        </div>
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</a>
+		</div>
+
+	<div class="listPoster">
+	<a href="/orderLists?name={{ School_name }}">
+        <div class="photo isotope-item" style="left: 0px; top: 0px; display: block;">
+          <img class="img-responsive" alt="TCC UFVJM ABNTEX2" src="/static/images/schoolLists/schoolList2.jpg">
+       </div>
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</a>
+		</div>
+
+	<div class="listPoster">
+        <div class="photo isotope-item" style="left: 0px; top: 0px; display: block;">
+          <img class="img-responsive" alt="Template Proficam" src="/static/images/schoolLists/schoolList3.jpg">
+        </div>
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</div>
+
+	<div class="listPoster">
+        <div class="photo isotope-item" style="left: 0px; top: 0px; display: block;">
+          <img class="img-responsive" alt="BGU Thesis Template" src="/static/images/schoolLists/schoolList1.jpg">
+        </div>
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</div>
+
+	<div class="listPoster">
+        <div class="photo isotope-item" style="left: 0px; top: 0px; display: block;">
+          <img class="img-responsive" alt="CERN Report" src="/static/images/schoolLists/schoolList3.jpg">
+        </div>
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</div>
+
+
+	<div class="listPoster">
+        <div class="photo isotope-item" style="left: 0px; top: 0px;  display: block;">
+          <img class="img-responsive" alt="Manuscript Template for Solar Physics" src="/static/images/schoolLists/schoolList1.jpg">
+       </div>
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</div>
+
+
+	<div class="listPoster">
+        <div class="photo isotope-item" style="left: 0px; top: 0px; display: block;">
+          <img class="img-responsive" alt="Tesis del Instituto Tecnológico de Tuxtla Gutiérrez" src="/static/images/schoolLists/schoolList2.jpg">
+        </div>
+			<div class = "teacherName">
+				<span>
+				<h4 id="h4.-bootstrap-heading">
+				Prof. Zoila Vargas
+				<a class="anchorjs-link" href="#h4.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h4>
+				</span>
+			</div>
+		</div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div> <!--// content Container -->
 {% endblock %}

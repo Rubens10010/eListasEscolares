@@ -1,0 +1,473 @@
+{% extends "layout.html" %}
+
+{% block w3l_login %}
+<div class="w3l_login">
+	<a href="#" data-toggle="modal" data-target="#myModal88">
+	<span class="glyphicon glyphicon-user" aria-hidden="true">
+	</span></a>
+</div>
+{% endblock %}
+
+{% block header_modal %}
+<!-- null -->
+{% endblock %}
+
+{% block indexClass %}
+<a href="/"> Inicio</a>
+{% endblock %}
+
+{% block productsClass %}
+<a href="#" class="act" data-toggle="dropdown">Productos <b class="caret"></b></a>
+{% endblock %}
+
+{% block aboutClass %}
+	<a href="/about" class = "dropdown-toggle">Acerca de Nosotros</a>
+{% endblock %}
+
+{% block supplierClass %}
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proveedores<span class="caret"></span></a>
+{% endblock %}
+
+{% block contactClass %}
+<a href="/mail">Contactanos</a>
+{% endblock %}
+
+
+{% block content %}
+	<style>
+	.banner.supplierBanner {
+		background:url(/static/images/orderBanner.jpg) 0px;
+	}
+
+.newsletter {
+    background: #3c43a4;
+    padding: 3em 0;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ContainerLists {
+	clear: none;
+	position: relative;
+	margin-left: 80px;
+}
+
+.gallery-container{
+	margin-left:100px;
+	position: relative;
+	display: inline-block;
+}
+
+.listPoster
+{
+	position: relative;
+	display: inherit;
+	margin-bottom: 20px;	
+}
+
+.photo.isotope-item {
+	position: relative;
+	display: block;
+}
+
+.listPoster:hover
+{	
+	color: #4F9C45;
+	opacity: 0.3;
+}
+
+.teacherName {
+	position: inherit;
+	display: block;
+	text-align: center;
+	margin-top: 8px;
+}
+
+.listProvider
+{
+	width: 100%;
+	display: inline-block;
+}
+
+.wthree_team_grid {
+	text-align: center;
+	display: inline-block;
+	position: inherit;
+	float:right;
+	width: 30%;
+	margin-top: 100px;
+}
+
+.nbs-flexisel-item > img {
+	cursor: pointer;
+	position: relative;
+	height: 200px;
+	margin-left: 30px;
+}
+
+select {
+	border-radius: 6px;
+    width: auto;
+    margin-left: 20px;
+    text-align: center;
+    font-family: 'Glegoo', serif;
+}
+	</style>
+
+	<!-- banner -->
+	<div class="banner supplierBanner banner10">
+		<div class="container">
+			<!--<h2>Productos Encontrados</h2>-->
+		</div>
+	</div>
+	<!-- //banner -->   
+	<!-- breadcrumbs -->
+	<div class="breadcrumb_dress">
+		<div class="container">
+			<ul>
+				<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Inicio</a> <i>/</i></li>
+				<li>Productos</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //breadcrumbs --> 
+
+<!--<div class="section_header">
+  <h3>Lista del Colegio {{School_name}} 1 year </h3>
+</div>-->
+
+<div class = "container" style="margin-top:50px;">
+<h3 class="agileits-title">Lista del Colegio {{School_name}} 1 year</h3>
+
+<!-- content Container -->
+<!-- listProvider-->
+<div class = "listProvider">
+<div class="grid_3 grid_4" style="width: 70%;display: inline-block;float: left;">
+				<div class="tableHeadings">
+				<label for="supplier"><h3 class="w3ls-hdg">Proveedor: </h3></label>
+
+
+				<select id="supplier" name="supplier">
+							{% for s in Suppliers %}
+<option value="s.name" id="s.urlCall">{{s.name}}</option>
+							{% endfor %}
+
+				</select>
+
+				</div>
+				<div class="bs-example w3layouts">
+
+					<table class="table">
+						<tbody>
+							<tr>
+								<th class="type-info w3l">Lapicero</th>
+								<th class="type-info w3l">Precio</th>
+<th class="type-info w3l">Agregar</th>
+							</tr>
+							<tr>
+								<td style = "width: 100%; position: absolute;">
+									<span class="badge" style="float: left;"> 1 </span>
+									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Colores
+									</h4>
+								</td>
+								<td class="type-info w3l">s/. 4.00</td>
+<td class="type-info w3l" style="position:absolute">
+<input type="checkbox" name="vehicle" value="Bike" checked>
+</td>
+							</tr>
+
+							<tr>
+								<td style = "width: 100%; position: absolute;">
+									<span class="badge" style="float: left;"> 6 </span>
+									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Cuadernos
+									</h4>
+								</td>
+								<td class="type-info w3l">s/. 12.00</td>
+<td class="type-info w3l" style="position:absolute;">
+<input type="checkbox" name="vehicle" value="Bike" checked>
+</td>
+							</tr>
+
+							<tr>
+								<td style = "width: 100%; position: absolute;">
+									<span class="badge" style="float: left;"> 1 </span>
+									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Crayones
+									</h4>
+								</td>
+								<td class="type-info w3l">s/. 5.00</td>
+<td class="type-info w3l" style="position:absolute;">
+<input type="checkbox" name="vehicle" value="Bike" checked>
+</td>
+							</tr>
+
+							<tr>
+								<td style = "width: 100%; position: absolute;">
+									<span class="badge" style="float: left;"> 1 </span>
+									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Plastilina
+									</h4>
+								</td>
+								<td class="type-info w3l">s/. 6.00</td>
+<td class="type-info w3l" style="position:absolute;">
+<input type="checkbox" name="vehicle" value="Bike" checked>
+</td>
+							</tr>
+
+							<tr>
+								<td style = "width: 100%; position: absolute;">
+									<span class="badge" style="float: left;"> 2 </span>
+									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Folder
+									</h4>
+								</td>
+								<td class="type-info w3l">s/. 3.00</td>
+<td class="type-info w3l" style="position:absolute;">
+<input type="checkbox" name="vehicle" value="Bike" checked>
+</td>
+							</tr>
+
+							<tr>
+								<td style = "width: 100%; position: absolute;">
+									<span class="badge" style="float: left;"> 1 </span>
+									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Corrector
+									</h4>
+								</td>
+								<td class="type-info w3l">s/. 1.00</td>
+<td class="type-info w3l" style="position:absolute;">
+<input type="checkbox" name="vehicle" value="Bike" checked>
+</td>
+							</tr>
+
+						</tbody>
+					</table>
+				<h3 class="w3ls-hdg" style="
+					float: right;
+					margin-right: 200px;
+					text-decoration: line-through;
+					position: relative;
+				">Total: S/.29.00</h3>
+				<br>
+
+				<a href="#"><h3 class="w3ls-hdg" style="
+					float: right;
+					margin-right: 200px; color: red;
+					position: absolute;
+					margin-left: 420px;
+					display: block;
+				">
+				<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Total: S/.25.00</h3>
+				</a>
+				</div>	
+
+			</div>
+		<!--// end grid_3 grid_4 -->
+
+	<!-- SupplierLogo -->
+	<div class="col-md-3 wthree_team_grid">
+		<img src="/static/images/provider/tailoy.png" alt=" " class="img-responsive">
+		<h4>Tai-Loy <span>Libreria</span></h4>
+		<div class="agileits_social_button">
+			<ul>
+				<li><a href="#" class="facebook"> </a></li>
+				<li><a href="#" class="twitter"> </a></li>
+				<li><a href="#" class="google"> </a></li>
+				<li><a href="#" class="pinterest"> </a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="Rating" style="text-align:center;">
+		<a class="agile-icon" href="#star"><i class="fa fa-star"></i></a>
+		<a class="agile-icon" href="#star"><i class="fa fa-star"></i></a>
+		<a class="agile-icon" href="#star"><i class="fa fa-star"></i></a>
+		<a class="agile-icon" href="#star"><i class="fa fa-star"></i></a>
+		<a class="agile-icon" href="#star"><i class="fa fa-star-half-empty"></i></a>
+		</div>
+	</div>
+<!--// SupplierLogo -->
+</div>
+<!-- endContainer listProvider-->
+
+<!--includedProducts -->
+<div class="top-brands">
+		<div class="container">
+			<h3>Productos Incluidos</h3>
+			<div class="sliderfig">
+				<div class="nbs-flexisel-container"><div class="nbs-flexisel-inner"><ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -221.94px; display: block;">			
+
+					<li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p1.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Lapicero Pilot</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li>
+
+					<li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p2.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Colores</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li>
+
+				<li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p3.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Goma</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li>
+<li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p4.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Silicona</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li>
+
+<li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p5.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Crayones</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li><li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p6.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Plastilina</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li><li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p7.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Plumones</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li><li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p8.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Cuaderno</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li><li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p9.jpg" alt=" " class="img-responsive">
+
+						<h5><a href="single.html">Folder</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li>
+					<li class="nbs-flexisel-item" style="width: 180px;">
+						<img src="/static/images/list/p10.jpg" alt=" " class="img-responsive">
+						<h5><a href="single.html">Folder</a></h5>
+						<div class="simpleCart_shelfItem">
+							<p><span>$520</span> <i class="item_price">$500</i></p>
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="1"> 
+								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
+								<input type="hidden" name="amount" value="500.00">   
+								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
+							</form>
+						</div>
+					</li>
+					</ul><div class="nbs-flexisel-nav-left" style="top: 52.5px;"></div><div class="nbs-flexisel-nav-right" style="top: 52.5px;"></div></div></div>
+			</div>
+			<script type="text/javascript">
+					$(window).load(function() {
+						$("#flexiselDemo1").flexisel({
+							visibleItems: 4,
+							animationSpeed: 1000,
+							autoPlay: true,
+							autoPlaySpeed: 3000,    		
+							pauseOnHover: true,
+							enableResponsiveBreakpoints: true,
+							responsiveBreakpoints: { 
+								portrait: { 
+									changePoint:480,
+									visibleItems: 1
+								}, 
+								landscape: { 
+									changePoint:640,
+									visibleItems:2
+								},
+								tablet: { 
+									changePoint:768,
+									visibleItems: 3
+								}
+							}
+						});
+						
+					});
+			</script>
+			<script type="text/javascript" src="static/js/jquery.flexisel.js"></script>
+		</div>
+	</div>
+
+<!--// End includedProducts -->
+
+</div><!--// end container -->
+{% endblock %}
