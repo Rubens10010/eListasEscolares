@@ -517,11 +517,12 @@ li.w3pages .dropdown-menu > li > a:hover{
 	min-height:400px;
 }
 .banner1 h2,.banner10 h2{
-	color: #111;
+	color: #000;
     font-size: 3em;
     text-align: center;
     padding: 2.5em 0 0;
 	text-align: left;
+	-webkit-text-stroke: 1px #fff;
 }
 .banner.banner1{
 	background:url(../images/bg1.jpg) no-repeat center;
@@ -2612,6 +2613,7 @@ h2.typoh2{
     -moz-border-radius: 50%;
     -o-border-radius: 50%;
     -ms-border-radius: 50%;
+	height: 200px;
 }
 /*-- //team --*/
 /*-- team-bottom --*/
