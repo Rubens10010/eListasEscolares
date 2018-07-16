@@ -10,6 +10,8 @@ loggedUser = False
 
 suppliers = [{"name":"Tay loy","urlCall":"/supplier?name=tayloy"},{"name":"Crisol","urlCall":"/supplier?name=crisol"},{"name":"El Saber","urlCall":"/supplier?name=elSaber"}]
 
+products = [{"ProductName":"Colores", "Quantity":"1","Unit":"cj", "UnitPrice":"4.00","TotalPrice":"4.00","ProductImgSrc":"p1.jpg","Compt":"3.00"},{"ProductName":"Cuadernos", "Quantity":"12","Unit":"U", "UnitPrice":"2.00","TotalPrice":"24.00","ProductImgSrc":"p2.jpg","Compt":"24.00"},{"ProductName":"Crayones", "Quantity":"1","Unit":"cj", "UnitPrice":"5.00","TotalPrice":"5.00","ProductImgSrc":"p3.jpg","Compt":"5.00"},{"ProductName":"Plastilina", "Quantity":"1","Unit":"cj", "UnitPrice":"6.00","TotalPrice":"6.00","ProductImgSrc":"p4.jpg","Compt":"8.00"},{"ProductName":"Folder", "Quantity":"3","Unit":"U", "UnitPrice":"3.00","TotalPrice":"9.00","ProductImgSrc":"p5.jpg","Compt":"10.00"},{"ProductName":"Plumones", "Quantity":"2","Unit":"U", "UnitPrice":"2.00","TotalPrice":"4.00","ProductImgSrc":"p6.jpg","Compt":"4.00"}]
+
 @app.route('/')
 def home():
 	loggedUser = False
@@ -143,8 +145,14 @@ def orderLists():
 	supplier_products = [{"name":"nothing","urlCall":"noProduct.png"}]
 	
 	if loggedUser:
-		return render_template('orderListsLogged.html', Email = user_email, School_name = school_name, Suppliers = suppliers)
-	return render_template('orderLists.html', School_name = school_name, Suppliers = suppliers)
+		return render_template('orderListsLogged.html', Email = user_email, School_name = school_name, Suppliers = suppliers, Products = products)
+	return render_template('orderLists.html', School_name = school_name, Suppliers = suppliers, Products = products)
+
+@app.route('/Upload')
+def Upload():
+	if loggedUser:
+		return render_template('UploadList.html', Email = user_email, Suppliers = suppliers)
+	return render_template('uploadList.html', Suppliers = suppliers)
 
 if __name__ == '__main__':
     app.run(debug = True)

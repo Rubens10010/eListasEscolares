@@ -156,87 +156,86 @@ select {
 
 				</select>
 
+    				<label for="supplier" style="
+    margin-left: 20px;
+"><h3 class="w3ls-hdg">Comparar con: </h3></label>
+
+
+				<select id="supplier" name="supplier">
+							
+<option value="s.name" id="s.urlCall">-</option><option value="s.name" id="s.urlCall">Tay Loy</option>
+							
+<option value="s.name" id="s.urlCall">Crisol</option>
+							
+<option value="s.name" id="s.urlCall">El Saber</option>
+				</select>							
+
 				</div>
 				<div class="bs-example w3layouts">
 
 					<table class="table">
 						<tbody>
 							<tr>
-								<th class="type-info w3l">Lapicero</th>
-								<th class="type-info w3l">Precio</th>
-<th class="type-info w3l">Agregar</th>
+								<th class="type-info w3l">Producto</th>
+								<th class="type-info w3l">Precio Ut.</th>
+								<th class="type-info w3l">Precio T.</th>
+								<th class="type-info w3l">Agregar</th>
+<!--<th class="type-info w3l">Comparativo</th>-->
 							</tr>
-							<tr>
-								<td style = "width: 100%; position: absolute;">
-									<span class="badge" style="float: left;"> 1 </span>
-									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Colores
-									</h4>
-								</td>
-								<td class="type-info w3l">s/. 4.00</td>
-<td class="type-info w3l" style="position:absolute">
-<input type="checkbox" name="vehicle" value="Bike" checked>
-</td>
-							</tr>
+
+							{% for p in Products %}
 
 							<tr>
 								<td style = "width: 100%; position: absolute;">
-									<span class="badge" style="float: left;"> 6 </span>
-									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Cuadernos
+									<span class="badge" style="float: left;"> <input type="text" name="quantity" value="{{p.Quantity}}" required="" style="
+    background: none;
+    border: none;
+    width: 15px;
+"> </span>
+									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">
+								<span>{{p.Unit}}</span>
+									{{p.ProductName}}
 									</h4>
 								</td>
-								<td class="type-info w3l">s/. 12.00</td>
-<td class="type-info w3l" style="position:absolute;">
-<input type="checkbox" name="vehicle" value="Bike" checked>
-</td>
+								<td class="type-info w3l" >s/. {{p.UnitPrice}}</td>
+
+								<td class="type-info w3l" style="color: green;">s/. {{p.TotalPrice}}</td>
+
+
+				<td class="type-info w3l" style="position:absolute">
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="add" value="{{p.Quantity}}"> 
+								<input type="hidden" name="w3ls_item" value="{{p.ProductName}}"> 
+								<input type="hidden" name="amount" value="{{p.TotalPrice}}">   
+								<button type="submit" class="w3ls-cart">
+								<input type="checkbox"  name="vehicle" onclick = "submit" checked>
+								</button>
+							</form>
+
+				</td>
+				<td class="type-info w3l">s/. {{p.Compt}}</td>
 							</tr>
+							{% endfor %}
+
 
 							<tr>
 								<td style = "width: 100%; position: absolute;">
-									<span class="badge" style="float: left;"> 1 </span>
-									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Crayones
-									</h4>
+								<span></span>
 								</td>
-								<td class="type-info w3l">s/. 5.00</td>
-<td class="type-info w3l" style="position:absolute;">
-<input type="checkbox" name="vehicle" value="Bike" checked>
+								<td class="type-info w3l" style="color: red;">
+
 </td>
+
+								<td class="type-info w3l" style="color: red;">s/. 52.00</td>
+
+
+				<td class="type-info w3l" style="position:absolute">
+				</td>
+				<td class="type-info w3l" style="color: red;">s/. 54.00</td>
 							</tr>
 
-							<tr>
-								<td style = "width: 100%; position: absolute;">
-									<span class="badge" style="float: left;"> 1 </span>
-									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Plastilina
-									</h4>
-								</td>
-								<td class="type-info w3l">s/. 6.00</td>
-<td class="type-info w3l" style="position:absolute;">
-<input type="checkbox" name="vehicle" value="Bike" checked>
-</td>
-							</tr>
-
-							<tr>
-								<td style = "width: 100%; position: absolute;">
-									<span class="badge" style="float: left;"> 2 </span>
-									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Folder
-									</h4>
-								</td>
-								<td class="type-info w3l">s/. 3.00</td>
-<td class="type-info w3l" style="position:absolute;">
-<input type="checkbox" name="vehicle" value="Bike" checked>
-</td>
-							</tr>
-
-							<tr>
-								<td style = "width: 100%; position: absolute;">
-									<span class="badge" style="float: left;"> 1 </span>
-									<h4 id="h4.-bootstrap-heading" style = "margin-left: 35px;">Corrector
-									</h4>
-								</td>
-								<td class="type-info w3l">s/. 1.00</td>
-<td class="type-info w3l" style="position:absolute;">
-<input type="checkbox" name="vehicle" value="Bike" checked>
-</td>
-							</tr>
+<!-- -->
 
 						</tbody>
 					</table>
@@ -245,7 +244,18 @@ select {
 					margin-right: 200px;
 					text-decoration: line-through;
 					position: relative;
-				">Total: S/.29.00</h3>
+				">Total: S/. 52.00</h3>
+
+<div class="w3ls_products_pos" style="
+    font-size: 14px;
+">
+											<h4>10%<i style="
+    margin-right:  30px;
+    margin-left: 10px;
+">Descuento/-</i></h4>
+											
+										</div>
+
 				<br>
 
 				<a href="#"><h3 class="w3ls-hdg" style="
@@ -254,8 +264,9 @@ select {
 					position: absolute;
 					margin-left: 420px;
 					display: block;
+					margin-top: -50px;
 				">
-				<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Total: S/.25.00</h3>
+				<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Total: S/.46.80</h3>
 				</a>
 				</div>	
 
@@ -292,148 +303,26 @@ select {
 		<div class="container">
 			<h3>Productos Incluidos</h3>
 			<div class="sliderfig">
-				<div class="nbs-flexisel-container"><div class="nbs-flexisel-inner"><ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -221.94px; display: block;">			
+				<div class="nbs-flexisel-container"><div class="nbs-flexisel-inner"><ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -221.94px; display: block;">
 
+							{% for p in Products %}
 					<li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p1.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Lapicero Pilot</a></h5>
+						<img src="/static/images/list/{{p.ProductImgSrc}}" alt=" " class="img-responsive">
+						<h5><a href="single.html">{{p.ProductName}}</a></h5>
 						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li>
+							<p><span>s/. {{p.UnitPrice}}</span> <i class="item_price">s/. {{p.TotalPrice}}</i></p>
 
-					<li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p2.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Colores</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
 							<form action="#" method="post">
 								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
+								<input type="hidden" name="add" value="{{p.Quantity}}"> 
+								<input type="hidden" name="w3ls_item" value="{{p.ProductName}}"> 
+								<input type="hidden" name="amount" value="{{p.TotalPrice}}">   
 								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
 							</form>
 						</div>
 					</li>
-
-				<li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p3.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Goma</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li>
-<li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p4.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Silicona</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li>
-
-<li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p5.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Crayones</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li><li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p6.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Plastilina</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li><li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p7.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Plumones</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li><li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p8.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Cuaderno</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li><li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p9.jpg" alt=" " class="img-responsive">
-
-						<h5><a href="single.html">Folder</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li>
-					<li class="nbs-flexisel-item" style="width: 180px;">
-						<img src="/static/images/list/p10.jpg" alt=" " class="img-responsive">
-						<h5><a href="single.html">Folder</a></h5>
-						<div class="simpleCart_shelfItem">
-							<p><span>$520</span> <i class="item_price">$500</i></p>
-							<form action="#" method="post">
-								<input type="hidden" name="cmd" value="_cart">
-								<input type="hidden" name="add" value="1"> 
-								<input type="hidden" name="w3ls_item" value="Red Laptop"> 
-								<input type="hidden" name="amount" value="500.00">   
-								<button type="submit" class="w3ls-cart">Agregar al carrito</button>
-							</form>
-						</div>
-					</li>
+							{% endfor %}
+		
 					</ul><div class="nbs-flexisel-nav-left" style="top: 52.5px;"></div><div class="nbs-flexisel-nav-right" style="top: 52.5px;"></div></div></div>
 			</div>
 			<script type="text/javascript">
